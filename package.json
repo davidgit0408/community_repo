@@ -1,0 +1,62 @@
+{
+  "private": true,
+  "scripts": {
+    "postinstall": "keystone postinstall",
+    "keystone:dev": "ENV=dev keystone dev",
+    "keystone:build": "keystone build",
+    "keystone:start": "keystone start",
+    "next:dev": "next dev -p 4000",
+    "gen": "yarn keystone:build && yarn next build",
+    "start": "next start",
+    "typecheck": "tsc",
+    "export": "next export",
+    "build": "yarn read:prod && yarn gen && yarn export && touch ./out/.nojekyll",
+    "read": "ts-node --transpileOnly ./script/auto-read.ts",
+    "read:prod": "NODE_ENV=production yarn read",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.10.6",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@keystone-6/core": "^5.1.0",
+    "@tabler/icons-react": "^2.6.0",
+    "dayjs": "^1.11.2",
+    "github-markdown-css": "^5.1.0",
+    "gray-matter": "^4.0.3",
+    "markdown-toc": "^1.2.0",
+    "next": "^13.2.4",
+    "next-seo": "^5.15.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-remark": "^2.1.0",
+    "rehype-add-classes": "^1.0.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-external-links": "^2.0.1",
+    "rehype-figure": "^1.0.1",
+    "rehype-slug": "^5.1.0",
+    "remark": "14.0.2",
+    "remark-gfm": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^18.14.2",
+    "@types/react": "^17.0.6",
+    "@types/react-dom": "^17.0.5",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.14.0",
+    "eslint-config-next": "^12.1.6",
+    "fs-extra": "^10.1.0",
+    "next-sitemap": "^4.0.6",
+    "postcss": "^8.4.13",
+    "reading-time": "^1.5.0",
+    "tailwindcss": "^3.0.24",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.2.4"
+  },
+  "resolutions": {
+    "next": "13.2.4"
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,51 @@
+:root {
+  --header-height: 56px;
+}
+.markdown-body ol,
+.markdown-body ul {
+  list-style: initial;
+}
+.task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.dark .github-bg-black {
+  background-color: var(--color-canvas-default, #0d1117);
+}
+
+.toc li ul {
+  margin-left: 16px;
+}
+.toc li {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.toc .active-heading {
+  font-weight: 700;
+}
+.toc .active-heading::before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 14px;
+  background-color: #000;
+  border-radius: 2px;
+  margin-right: 4px;
+  vertical-align: text-bottom;
+}
+.dark .toc .active-heading::before {
+  background-color: #c9d1d9;
+}
+
+.blog-image-figure {
+}
+
+.rehype-figure figcaption {
+  color: #a8a29e;
+  font-size: small;
+  text-align: center;
+  font-style: italic;
+}

@@ -1,0 +1,25 @@
+os: linux
+language: node_js
+node_js:
+  - 14
+branches:
+  only:
+    - master
+cache:
+  directories:
+    - node_modules
+    - .next
+before_script:
+  - yarn
+  - yarn build
+script:
+  - yarn gen
+deploy:
+  provider: pages
+  skip_cleanup: true
+  token: $GH_TOKEN
+  keep_history: true
+  on:
+    branch: master
+  local_dir: out
+  target_branch: gh-pages
